@@ -1,5 +1,5 @@
 import tkinter as tk
-import connection
+import nanoleaf 
     
 
 root = tk.Tk()
@@ -11,7 +11,7 @@ BlueButton = tk.Button(frame,
                    height=30,
                    bg="blue",
                    activebackground='blue',
-                   command=lambda: connection.change_color(200)
+                   command=lambda: nanoleaf.change_color(200)
                    )
 BlueButton.pack(side=tk.LEFT)
 RedButton = tk.Button(frame,
@@ -19,7 +19,7 @@ RedButton = tk.Button(frame,
                    height=30,
                    bg="red",
                    activebackground='red',
-                   command=lambda: connection.change_color(0)
+                   command=lambda: nanoleaf.change_color(0)
                    )
 RedButton.pack(side=tk.LEFT)
 GreenButton = tk.Button(frame,
@@ -27,7 +27,7 @@ GreenButton = tk.Button(frame,
                    height=30,
                    bg="green",
                    activebackground='green',
-                   command=lambda: connection.change_color(120)
+                   command=lambda: nanoleaf.change_color(120)
                    )
 GreenButton.pack(side=tk.LEFT)
 
