@@ -11,7 +11,7 @@ BlueButton = tk.Button(frame,
                    height=30,
                    bg="blue",
                    activebackground='blue',
-                   command=connection.change_color(200)
+                   command=lambda: connection.change_color(200)
                    )
 BlueButton.pack(side=tk.LEFT)
 RedButton = tk.Button(frame,
@@ -19,15 +19,15 @@ RedButton = tk.Button(frame,
                    height=30,
                    bg="red",
                    activebackground='red',
-                   command=connection.change_color(0)
+                   command=lambda: connection.change_color(0)
                    )
 RedButton.pack(side=tk.LEFT)
 GreenButton = tk.Button(frame,
                    width=30,
                    height=30,
                    bg="green",
-                   activebackground='green'
-                   command=connection.change_color(110),
+                   activebackground='green',
+                   command=lambda: connection.change_color(120)
                    )
 GreenButton.pack(side=tk.LEFT)
 
