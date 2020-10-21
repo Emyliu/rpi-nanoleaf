@@ -19,8 +19,6 @@ time_text = time.strftime("%I:%M%p")
 if time_text[0] == "0":
     time_text = time_text[1:]
 root = tk.Tk()
-root.attributes('-type', 'dock')
-root.focus_force()
 frame = tk.Frame(root)
 frame.pack()
 
