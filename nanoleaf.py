@@ -11,7 +11,7 @@ def change_color(color):
 
 
 def off():
-    r = requests.put(base_address, json={ "on": { "value": "false" }})
+    r = requests.put(base_address, json={ "on": { "value": False }})
 
 def white():
     r = requests.put(base_address + '/sat', json={ "sat": { "value": 0 }})

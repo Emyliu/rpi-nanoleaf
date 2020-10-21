@@ -115,10 +115,10 @@ def updateTime():
     Main.delete(dateref)
     if time_text[0] == "0":
         time_text = time_text[1:]
-        timeref = Main.create_text(195,440,font="Helvetica 90",text=time_text,fill="white")
+        timeref = Main.create_text(215,440,font="Helvetica 90",text=time_text,fill="white")
     else:
-        timeref = Main.create_text(225,440,font="Helvetica 90",text=time_text,fill="white")
-    dateref = Main.create_text(165,510,font="Helvetica 25",text=date_text,fill="white")
+        timeref = Main.create_text(245,440,font="Helvetica 90",text=time_text,fill="white")
+    dateref = Main.create_text(175,510,font="Helvetica 25",text=date_text,fill="white")
     
     frame.after(200, updateTime)
 
