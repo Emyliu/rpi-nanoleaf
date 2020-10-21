@@ -5,7 +5,7 @@ import json
 city = "Markham"
 state = "Ontario"
 # API Key
-api_key = "INSERT API KEY"
+api_key = ""
 # Base address for OpenWeatherMap
 base_address = "https://api.openweathermap.org/data/2.5/weather"
 
@@ -26,5 +26,3 @@ def getWeather():
 # Returns the current location
 def getLocation():
     return city + ", " + state
-
-getWeather()
