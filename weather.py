@@ -5,7 +5,7 @@ import json
 city = "Markham"
 state = "Ontario"
 # API Key
-api_key = "036655339f34ad88bc99eb184996a326"
+api_key = "INSERT API KEY"
 # Base address for OpenWeatherMap
 base_address = "https://api.openweathermap.org/data/2.5/weather"
 
