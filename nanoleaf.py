@@ -6,6 +6,12 @@ base_address = "http://192.168.68.129:16021/api/v1/hQfmNSrfeYyNn8i0JoD91qRvpX5DJ
 
 def change_color(color):
     print(color)
-    r = requests.put(base_address, json={ "hue": { "value": int(color) }})
+    r = requests.put(base_address, json={ "hue": { "value": int(color) }, "sat": { "value": 100 }})
     return r.content
 
+
+def off():
+    r = requests.put(base_address, json={ "on": { "value": "false" }})
+
+def white():
+    r = requests.put(base_address + '/sat', json={ "sat": { "value": 0 }})
