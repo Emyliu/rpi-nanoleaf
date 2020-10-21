@@ -7,26 +7,19 @@ import sys
 import datetime
 import calendar
 
-now = datetime.datetime.now()
-month = now.strftime("%B")
-date = now.strftime("%d")
-day = calendar.day_name[datetime.date.today().weekday()]
-
-
+# Tkinter Labels
 timeref = None
 dateref = None
-time_text = time.strftime("%I:%M%p")
-if time_text[0] == "0":
-    time_text = time_text[1:]
+tempref = None
+
+# Generating root and frame
 root = tk.Tk()
 frame = tk.Frame(root)
 frame.pack()
 
-# Background Image Setup
+# Setting up background images and buttons
 null_image = tk.PhotoImage(width=0, height=0)
 background_image=tk.PhotoImage(file = os.path.join(sys.path[0], "bckg.png"))
-
-
 Main = tk.Canvas(frame, width=1024, height=600, bd=0, highlightthickness=0)
 Main.create_image(0,0,image=background_image,anchor="nw")
 Main.pack(side=tk.TOP)
@@ -102,6 +95,7 @@ CanvasOffButton = Main.create_window(660,0, window=OffButton)
 CanvasOnButton = Main.create_window(780,0, window=WhiteButton)
 
 
+# Initializes the date/time strings and updates every 200 msec
 def updateTime():
     now = datetime.datetime.now()
     month = now.strftime("%B")
@@ -122,6 +116,15 @@ def updateTime():
     
     frame.after(200, updateTime)
 
+def updateWeather():
+    global tempref
+    descriptor = str(weather.getTemperature()) + " °C, " + weather.getDescriptor()
+    Main.delete(tempref)
+    tempref = Main.create_text(850,510,font="Helvetica 35",text=descriptor,fill="white")
 
+    # Update every minute
+    frame.after(60000, updateTime)
+
+updateWeather()
 updateTime()
 root.mainloop()
